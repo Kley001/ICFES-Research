@@ -143,6 +143,7 @@ Donde se puede observar que la primera componente logra explicar un 21.2% la var
 ```{r, warning=FALSE, echo=FALSE}
 fviz_contrib(res.mca, choice = "var", axes = 1, top = 30, title = "Contribuciones de las variables en la primera dimensión")
 ```
+
 Así, se eligen las siguientes 16 variables:
 
 - 'fami_tieneinternet'
@@ -193,6 +194,7 @@ Luego, se utiliza nuevamente el MCA Para obtener el índice de riqueza por estud
 res.mcaI <- MCA(Datos_indice, graph = FALSE)
 fviz_screeplot(res.mcaI, addlabels = TRUE, ylim = c(0, 25),  main = "Gráfica de sedimentación", xlab ="Dimensiones", ylab= "Porcentajes de varianza explicados por cada dimensión")
 ```
+
 Ahora, se nota que explica un 21.8% de la variabilidad del conjunto de datos. Entonces, la primera dimensión se utilizará como el índice de riqueza por estudiante.
 
 ```{r, warning=FALSE, echo=FALSE}
@@ -210,6 +212,7 @@ plot(Rico, xlab = 'Indicador de Riqueza',
      ylab = '', col = 'blue')
 grid()
 ```
+
 Del gráfico anterior, se visualiza que existen muchos alumnos en condiciones de pobreza, y que pocos gozan de tener riqueza en sus hogares.
 
 ```{r, warning=FALSE, echo=FALSE}
@@ -297,6 +300,7 @@ Donde, en términos generales, se puede ver un mejor desempeño en los colegios 
 plot(DatosDepartamentos$RiquezaColegio, main = 'Distribución del nivel de riqueza del colegio', col = 'blue', ylab = 'Frecuencia', xlab = 'Riqueza del colegio')
 grid()
 ```
+
 Se puede observar que la riqueza de los colegios en su mayoría se encuentran entre el nivel 4 y 7 del indicador de riqueza creado.
 
 ### Gráfico para la variable del resultado por colegio.
@@ -305,6 +309,7 @@ Se puede observar que la riqueza de los colegios en su mayoría se encuentran en
 plot(DatosDepartamentos$resultado, las = 2, main = 'Distribución del resultado del estudiante', col = 'blue', ylab = 'Frecuencia')
 grid()
 ```
+
 El anterior gráfico demuestra que es más natural observar que los estudiantes posean puntuaciones de la prueba Saber 11 entre (200, 300] y (300, 400], que en los otros rangos. Así que hay pocos estudiantes que obtuvieron malos resultados, en términos generales, y también pocos con resultados sobresalientes.
 
 ### Boxplot para el Puntaje del estudiante en función de la riqueza del colegio
@@ -313,6 +318,7 @@ El anterior gráfico demuestra que es más natural observar que los estudiantes 
 boxplot(punt_global ~ RiquezaColegio, data = DatosDepartamentos, ylab = 'Puntaje del estudiante', xlab = 'Riqueza del colegio', main = 'Puntaje del estudiante en función de la riqueza del colegio', col = 'blue')
 grid()
 ```
+
 Del gráfico de cajas anterior, se puede pensar que la riqueza del colegio sí influye en el desempeño de los estudiantes en la prueda de Estado.
 
 ### Boxplot para el Puntaje del estudiante en función de la naturaleza del colegio
@@ -321,6 +327,7 @@ Del gráfico de cajas anterior, se puede pensar que la riqueza del colegio sí i
 boxplot(punt_global ~ cole_naturaleza, data = DatosDepartamentos, xlab = 'Naturaleza del colegio', ylab = 'Puntaje del estudiante', main = 'Puntaje del estudiante en función de la naturaleza del colegio', col = 'blue')
 grid()
 ```
+
 Donde se observa que la media del puntaje para los colegios no oficiales es mayor que la de los colegios de carácter oficial, sin embargo se puede observar igualmente que el BoxPlot de los colegios de carácter no oficial, tiene mayor variabilidad. 
 
 ### Boxplot para el Puntaje del estudiante en función de jornada del colegio
@@ -572,6 +579,10 @@ Como el valor-p es mayor a un $\alpha$ de 0.05 hay suficiente evidencia estadís
 - Es recomendable que se analicen otros años en este caso de estudio, ésto con el fin de saber si el comportamiento de las puntuaciones de las pruebas Saber 11, con respecto a la riqueza tiene alguna mejoría o cambios drásticos.
 
 - Las herramientas digitales jugaron, sin duda alguna, un papel fundamental (R, R-Studio) para la realización de dicho trabajo, es por eso que se debe resaltar la importancia que tiene el saber implementar la estadística en dichos softwares.
+
+## Anexo
+
+En el siguiente enlace se puede encontrar el repositorio del trabajo alojado en GitHub: https://github.com/Kley001/ICFES-Research
 
 ## Bibliografía
 
